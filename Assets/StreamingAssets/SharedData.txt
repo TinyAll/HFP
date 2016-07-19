@@ -25,6 +25,10 @@
 Missions_Begin
 //				#describe:[捕获10条Enemy,捕获5条AttackEnemy,拾取物品1次,收获20枚金币,消耗30枚金币,消耗10枚bullet武器,使用bullet武器捕获10条鱼,一次性捕获3条Enemy],
 	Mission1	[#catchSomething:[Enemy,AttackEnemy,Thing],#catchCount:[10,5,1],#earnCoin:20,#consumeCoin:30,#consumeWeapon:[Bullet],#consumeWeaponCount:[10],#useWeaponCatchFish:[Bullet],#useWeaponCatchFishCount:[10],#catchFishsOnce:[Enemy],#catchFishsOnceCount:[3]]
+	Mission2	[#catchSomething:[Enemy,AttackEnemy,Thing],#catchCount:[10,5,1],#earnCoin:20,#consumeCoin:30,#consumeWeapon:[Bullet],#consumeWeaponCount:[10],#useWeaponCatchFish:[Bullet],#useWeaponCatchFishCount:[10],#catchFishsOnce:[Enemy],#catchFishsOnceCount:[3]]
+	Mission3	[#catchSomething:[Enemy,AttackEnemy,Thing],#catchCount:[10,5,1],#earnCoin:20,#consumeCoin:30,#consumeWeapon:[Bullet],#consumeWeaponCount:[10],#useWeaponCatchFish:[Bullet],#useWeaponCatchFishCount:[10],#catchFishsOnce:[Enemy],#catchFishsOnceCount:[3]]
+	Mission4	[#catchSomething:[Enemy,AttackEnemy,Thing],#catchCount:[10,5,1],#earnCoin:20,#consumeCoin:30,#consumeWeapon:[Bullet],#consumeWeaponCount:[10],#useWeaponCatchFish:[Bullet],#useWeaponCatchFishCount:[10],#catchFishsOnce:[Enemy],#catchFishsOnceCount:[3]]
+	Mission5	[#catchSomething:[Enemy,AttackEnemy,Thing],#catchCount:[10,5,1],#earnCoin:20,#consumeCoin:30,#consumeWeapon:[Bullet],#consumeWeaponCount:[10],#useWeaponCatchFish:[Bullet],#useWeaponCatchFishCount:[10],#catchFishsOnce:[Enemy],#catchFishsOnceCount:[3]]
 Missions_End
 
 Player_Begin
