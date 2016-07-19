@@ -217,6 +217,7 @@ pip-log.txt
 
 ##User
 Library/
+Temp/
 *.CSharp
 *.Editor
 *.Plugins

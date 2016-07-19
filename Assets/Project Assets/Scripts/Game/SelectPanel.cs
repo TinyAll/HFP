@@ -9,7 +9,7 @@ public class SelectPanel : MonoBehaviour {
 
     public void OnButton(GameObject aButton) { OnButton(aButton.name); }
 
-    private string PlayMode;
+    //public AttackBehaviorBase.MODE mode;
 
     public void OnButton(string aButtonName)
     {
@@ -35,17 +35,17 @@ public class SelectPanel : MonoBehaviour {
                 }
             case "PlayerMode1":
                 {
-                    PlayMode = aButtonName;
+                    attackBehaviorObject.mode = AttackBehaviorBase.MODE.PlayerMode1;
                     break;
                 }
             case "PlayerMode2":
                 {
-                    PlayMode = aButtonName;
+                    attackBehaviorObject.mode = AttackBehaviorBase.MODE.PlayerMode2;
                     break;
                 }
             case "PlayerMode3":
                 {
-                    PlayMode = aButtonName;
+                    attackBehaviorObject.mode = AttackBehaviorBase.MODE.PlayerMode3;
                     break;
                 }
 
