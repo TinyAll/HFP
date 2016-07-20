@@ -9,14 +9,7 @@ public class AttackBehaviorBase : MonoBehaviour {
 
     public int coinValue;
 
-    public enum MODE{
-        None,
-        PlayerMode1,
-        PlayerMode2,
-        PlayerMode3
-    }
-
-    public MODE mode;
+   
 
     private Mission mission;
 
@@ -30,32 +23,10 @@ public class AttackBehaviorBase : MonoBehaviour {
     {
         mission = GetComponent<Mission>();
 
-        if(mode != MODE.None)
-        {
-            var type = mode.ToString();
-
-            setMode(type);
-        }
+       
         Invoke("nextFrame", 0);
     }
-    public void setMode(string type)
-    {
-        var mode = gameObject.transform.FindChild("Mode");
-
-        if (mode)
-        {
-            Destroy(mode.gameObject);
-        }
-        var modeGameObj = Loader.LoadGameObject("Mode/" + type);
-
-        modeGameObj.name = "Mode";
-
-        modeGameObj.transform.parent = gameObject.transform;
-
-        modeGameObj.transform.position = gameObject.transform.position;
-
-        modeGameObj.transform.rotation = gameObject.transform.rotation;
-    }
+    
     public virtual void nextFrame()
     {
         

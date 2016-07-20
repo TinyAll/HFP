@@ -17,7 +17,7 @@ public class GamePanel : MonoBehaviour {
     public Shoot shootObject;
 
     [HideInInspector]
-    public AttackBehaviorBase attackBehaviorObject;
+    public LifeBehavior attackBehaviorObject;
 
     [HideInInspector]
     public Mission mission;
@@ -31,7 +31,7 @@ public class GamePanel : MonoBehaviour {
     {
         shootObject = showAndControlGameObject.GetComponent<Shoot>();
 
-        attackBehaviorObject = showAndControlGameObject.GetComponent<AttackBehaviorBase>();
+        attackBehaviorObject = showAndControlGameObject.GetComponent<LifeBehavior>();
 
         mission = showAndControlGameObject.GetComponent<Mission>();
 

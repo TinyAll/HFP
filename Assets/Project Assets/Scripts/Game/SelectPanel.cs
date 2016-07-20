@@ -5,7 +5,7 @@ public class SelectPanel : MonoBehaviour {
 
     public InterfaceScript interfaceScripte;
 
-    public AttackBehaviorBase attackBehaviorObject;
+    public LifeBehavior attackBehaviorObject;
 
     public void OnButton(GameObject aButton) { OnButton(aButton.name); }
 
@@ -35,17 +35,17 @@ public class SelectPanel : MonoBehaviour {
                 }
             case "PlayerMode1":
                 {
-                    attackBehaviorObject.mode = AttackBehaviorBase.MODE.PlayerMode1;
+                    attackBehaviorObject.mode = LifeBehavior.MODE.PlayerMode1;
                     break;
                 }
             case "PlayerMode2":
                 {
-                    attackBehaviorObject.mode = AttackBehaviorBase.MODE.PlayerMode2;
+                    attackBehaviorObject.mode = LifeBehavior.MODE.PlayerMode2;
                     break;
                 }
             case "PlayerMode3":
                 {
-                    attackBehaviorObject.mode = AttackBehaviorBase.MODE.PlayerMode3;
+                    attackBehaviorObject.mode = LifeBehavior.MODE.PlayerMode3;
                     break;
                 }
 
