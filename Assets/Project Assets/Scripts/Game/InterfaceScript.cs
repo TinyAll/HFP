@@ -32,6 +32,8 @@ public class InterfaceScript : MonoBehaviour {
             t.gameObject.SetActive(false);
         }
 
+        game.SetActive(false);
+
         startPanel.SetActive(true);
 
         gameObject.transform.FindChild("FPS").gameObject.SetActive(true);

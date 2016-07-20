@@ -17,12 +17,12 @@ public class Shoot : MonoBehaviour {
 
     private AttackBehaviorBase attackBehaviorBase;
 
-    void Start()
+    public virtual void Start()
     {
         attackBehaviorBase = GetComponent<AttackBehaviorBase>();
     }
 
-    void Update()
+    public virtual void Update()
     {
         currentVelocity = (transform.position - oldPosition) / Time.deltaTime;
 

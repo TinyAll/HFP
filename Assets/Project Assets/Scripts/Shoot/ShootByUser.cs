@@ -5,22 +5,72 @@ public class ShootByUser : Shoot
 {
     public Transform cameraTransform;
 
+    public float fireRate = 1 / 3.0f;
+
+    float nextFire = 0;
+
+    bool isShooting;
+
+    Vector3 position;
+
+    float cameraDistance;
+
+
+
     protected virtual void OnEnable()
     {
-         Lean.LeanTouch.OnFingerTap += OnShooting;
+        Lean.LeanTouch.OnFingerDown += OnFingerDown;
+        Lean.LeanTouch.OnFingerUp += OnFingerUp;
+        Lean.LeanTouch.OnFingerDrag += OnFingerDrag;
+
     }
 
     protected virtual void OnDisable()
     {
-        Lean.LeanTouch.OnFingerTap -= OnShooting;
+        Lean.LeanTouch.OnFingerDown -= OnFingerDown;
+        Lean.LeanTouch.OnFingerUp -= OnFingerUp;
     }
 
+    public override void Start()
+    {
+        base.Start();
+        cameraDistance = -cameraTransform.position.z;
+    }
 
-    public void OnShooting(Lean.LeanFinger finger)
+    public override void Update()
+    {
+        base.Update();
+        OnShooting();
+    }
+    public void OnFingerDown(Lean.LeanFinger finger)
     {
         if (finger.IsOverGui == false)
         {
-            var position = finger.GetWorldPosition(-cameraTransform.position.z);
+            isShooting = true;
+
+            position = finger.GetWorldPosition(cameraDistance);
+        }
+        print("up");
+    }
+    public void OnFingerUp(Lean.LeanFinger finger)
+    {
+        isShooting = false;
+        print("down");
+
+    }
+    public void OnFingerDrag(Lean.LeanFinger finger)
+    {
+        if (finger.IsOverGui == false)
+        {
+            position = finger.GetWorldPosition(cameraDistance);
+        }
+        print("drag:" + position);
+    }
+    public void OnShooting()
+    {
+        if (isShooting && Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
 
             base.shoot(position);
         }
