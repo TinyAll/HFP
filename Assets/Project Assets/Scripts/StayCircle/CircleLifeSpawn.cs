@@ -9,6 +9,8 @@ public class CircleLifeSpawn : MonoBehaviour {
 
     public float spawnDistance = 50;
 
+    public float dispearDistance = 100;
+
     public float spawnIntervalTimer = 0.01f;
 
     private float intervalTimer = 0;
@@ -34,6 +36,8 @@ public class CircleLifeSpawn : MonoBehaviour {
 
     private Vector3[] paths = new Vector3[11];
 
+    private bool isLifeActive = false;
+
     void Start () {
 
         intervalTimer = spawnIntervalTimer;
@@ -47,7 +51,9 @@ public class CircleLifeSpawn : MonoBehaviour {
 
     void Update()
     {
-        if((position - distanceObject.position).sqrMagnitude < spawnDistance * spawnDistance)
+        float sqrDistance = (position - distanceObject.position).sqrMagnitude;
+
+        if (sqrDistance < spawnDistance * spawnDistance)
         {
             if (amount > 0)
             {
@@ -70,6 +76,32 @@ public class CircleLifeSpawn : MonoBehaviour {
                     obj.transform.SetParent(transform, true);
 
                     amount--;
+
+                    isLifeActive = true;
+                }
+            }
+            else
+            {
+                if (!isLifeActive)
+                {
+                    isLifeActive = !isLifeActive;
+
+                    foreach (Transform item in transform)
+                    {
+                        item.gameObject.SetActive(isLifeActive);
+                    }
+                }
+            }
+        }
+        else if(sqrDistance > dispearDistance* dispearDistance)
+        {
+            if (isLifeActive)
+            {
+                isLifeActive = !isLifeActive;
+
+                foreach(Transform item in transform)
+                {
+                    item.gameObject.SetActive(isLifeActive);
                 }
             }
         }
