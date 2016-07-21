@@ -5,13 +5,25 @@ public class CircleLifeSpawn : MonoBehaviour {
 
 	public GameObject fish;
 
+    public Transform distanceObject;
+
+    public float spawnDistance = 50;
+
+    public float spawnIntervalTimer = 0.01f;
+
+    private float intervalTimer = 0;
+
     public int count = 0;
+
+    private int amount = 0;
 
     public float changePositionTime = 2;
 
     public float changePositionTimeOffset = 0.2f;
 
     public float stayCircleRadius = 15;
+
+    public float spawnCircleRadius = 5;
 
     [HideInInspector]
     public Vector3 position;
@@ -24,19 +36,43 @@ public class CircleLifeSpawn : MonoBehaviour {
 
     void Start () {
 
+        intervalTimer = spawnIntervalTimer;
+
+        amount = count;
+
         position = transform.position;
 
-        for (int i = 0; i < count; i++)
-        {
-            distrubutePosition();
-
-            var obj = (GameObject) Instantiate(fish, position, Quaternion.identity);
-
-            obj.name = fish.name;
-
-            obj.transform.SetParent(transform, true);
-        }
         InvokeRepeating("distrubutePosition", 0, changePositionTime);
+    }
+
+    void Update()
+    {
+        if((position - distanceObject.position).sqrMagnitude < spawnDistance * spawnDistance)
+        {
+            if (amount > 0)
+            {
+                intervalTimer -= Time.deltaTime;
+
+                if(intervalTimer < 0)
+                {
+                    intervalTimer = spawnIntervalTimer;
+
+                    //distrubutePosition();
+
+                    position = Random.insideUnitCircle * spawnCircleRadius;
+
+                    position += transform.position;
+
+                    var obj = (GameObject)Instantiate(fish, position, Quaternion.identity);
+
+                    obj.name = fish.name;
+
+                    obj.transform.SetParent(transform, true);
+
+                    amount--;
+                }
+            }
+        }
     }
 
     public float getChangePositonTime()

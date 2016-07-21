@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Towards : MovementBase
 {
+    public float speed = 10;
+
     private Transform tr;
 
     public override void OnEnter()

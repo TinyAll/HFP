@@ -3,17 +3,17 @@ using System.Collections;
 
 public class RandomPosition : MovementBase
 {
-    public bool drawRange = false;
+    protected Vector3 center;
 
-    public Vector3 center;
-
-    public float changePositionTime;
+    protected float changePositionTime = 2;
 
     protected Vector3 oldMovement;
 
     protected Vector3 velocity = Vector3.zero;
 
     protected float passTime = 0;
+
+    private float speed = 10;
 
     override public void Start()
     {

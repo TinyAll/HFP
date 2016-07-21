@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShootBySelf : Shoot
+public class EnemyBehavior : LifeBehavior
 {
 
-	
 }

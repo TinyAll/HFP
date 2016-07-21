@@ -10,7 +10,7 @@ public class MovementBase : ExecutionBase
         velocity
     }
 
-    public float speed = 10;
+    
 
     protected Vector3 movement;
 

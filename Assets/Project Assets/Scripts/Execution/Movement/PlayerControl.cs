@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerControl : MovementBase
 {
+    public float speed = 10;
+
     public float fastSpeed;
 
     private Vector3 oldMovement = Vector3.zero;

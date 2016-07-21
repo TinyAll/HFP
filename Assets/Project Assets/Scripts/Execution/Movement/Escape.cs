@@ -4,6 +4,8 @@ using System.Collections.Generic;//C# 包中的类
 
 public class Escape : MovementBase
 {
+    public float speed = 10;
+
     void FixedUpdate() {
         
         if (enableMovement)

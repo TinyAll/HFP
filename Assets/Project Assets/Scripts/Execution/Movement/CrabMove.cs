@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CrabMove : MovementBase
 {
+    public float speed = 10;
 
     public int wallLayer;
 
