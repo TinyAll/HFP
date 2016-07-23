@@ -9,11 +9,17 @@ public class PlayerControl : MovementBase
 
     private Vector3 oldMovement = Vector3.zero;
 
+    [HideInInspector]
+    public float inputMovementH;
+
+    [HideInInspector]
+    public float inputMovementV;
+
     void FixedUpdate()
     {
         if (enableMovement)
         {
-            movement = new Vector3(UserCommandData.movementH, UserCommandData.movementV, 0.0F);
+            movement = new Vector3(inputMovementH, inputMovementV, 0.0F);
 
             speedDownLerp();
 

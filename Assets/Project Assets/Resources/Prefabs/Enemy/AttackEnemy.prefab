@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 435854}
-  - 114: {fileID: 11438776}
   - 114: {fileID: 11479526}
   - 135: {fileID: 13540472}
   - 114: {fileID: 11463512}
@@ -20,6 +19,7 @@ GameObject:
   - 114: {fileID: 11437706}
   - 114: {fileID: 11470500}
   - 114: {fileID: 11447240}
+  - 114: {fileID: 11499670}
   m_Layer: 14
   m_Name: AttackEnemy
   m_TagString: Untagged
@@ -161,20 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherRange: 3
   attackTriggerObject: {fileID: 165374}
---- !u!114 &11438776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef30926299fb1b4418a2c5d3302f8b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 6
-  ATK: 0
-  coinValue: 6
 --- !u!114 &11447240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +255,21 @@ MonoBehaviour:
   attackTriggerObject: {fileID: 165374}
   enableMovement: 0
   speed: 40
+--- !u!114 &11499670
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee17ab1c13f1dd148b376404719e82fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 5
+  ATK: 0
+  coinValue: 2
+  destroyDeep: 1000
 --- !u!135 &13540472
 SphereCollider:
   m_ObjectHideFlags: 1

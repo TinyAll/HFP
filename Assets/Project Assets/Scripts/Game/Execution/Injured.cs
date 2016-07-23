@@ -11,7 +11,7 @@ public class Injured : ExecutionBase
 
         var weaponBehaviorBase = otherAttackBehaviorBase as WeaponBehavior;
 
-        GetComponent<AttackBehaviorBase>().HP -= otherAttackBehaviorBase.ATK;
+        attackBehaviorBase.HP -= otherAttackBehaviorBase.ATK;
 
         if (GetComponent<AttackBehaviorBase>().HP <= 0)
         {
@@ -19,7 +19,7 @@ public class Injured : ExecutionBase
 
             attackBehaviorBase.coinValue = 0;
 
-            GetComponent<DestroyWithOnTriggerExit>().execute(5000);
+            attackBehaviorBase.destroyWithOnTriggerExit();
         }
     }
 }

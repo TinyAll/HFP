@@ -236,6 +236,8 @@ MonoBehaviour:
   enableMovement: 0
   speed: 14
   fastSpeed: 0
+  inputMovementH: 0
+  inputMovementV: 0
 --- !u!114 &11486456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,6 +252,7 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 0
+  destroyDeep: 6000
   mode: 1
 --- !u!114 &11490566
 MonoBehaviour:

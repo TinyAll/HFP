@@ -170,6 +170,8 @@ MonoBehaviour:
   HP: 0
   ATK: 1
   coinValue: 2
+  destroyDeep: 11000
+  pools: {fileID: 11486342, guid: 1c1b60bd6e528e246981509a9ff77acf, type: 2}
   attackObj: {fileID: 0}
 --- !u!114 &11457932
 MonoBehaviour:

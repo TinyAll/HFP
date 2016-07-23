@@ -7,6 +7,6 @@ public class DestroyBullet: DestroyBase
     {
         base.OnEnter();
 
-        GetComponent<DestroyWithOnTriggerExit>().execute(9000);
+        attackBehaviorBase.destroyWithOnTriggerExit();
     }
 }

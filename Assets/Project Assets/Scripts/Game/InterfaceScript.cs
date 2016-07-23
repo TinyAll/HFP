@@ -25,8 +25,6 @@ public class InterfaceScript : MonoBehaviour {
             return;
         }
 
-        Scripts.interfaceScript = this;
-
         foreach (Transform t in transform)
         {
             t.gameObject.SetActive(false);

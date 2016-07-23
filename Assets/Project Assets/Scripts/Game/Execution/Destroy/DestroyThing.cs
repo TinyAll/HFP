@@ -7,6 +7,6 @@ public class DestroyThing : DestroyBase
     {
         base.OnEnter();
 
-        GetComponent<DestroyWithOnTriggerExit>().execute(9500);
+        attackBehaviorBase.destroyWithOnTriggerExit();
     }
 }

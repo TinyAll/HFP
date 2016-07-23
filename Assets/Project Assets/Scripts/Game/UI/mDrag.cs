@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class mDrag : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerUpHandler
 {
+    public PlayerControl playerControl;
+
     private Vector3 m_StartPos;
 
     void Start()
@@ -24,9 +26,9 @@ public class mDrag : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerU
 
         offset /= transform.lossyScale.y;
 
-        UserCommandData.movementH = offset.x / 100;
+        playerControl.inputMovementH = offset.x / 100;
 
-        UserCommandData.movementV = offset.y / 100;
+        playerControl.inputMovementV = offset.y / 100;
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -42,8 +44,8 @@ public class mDrag : MonoBehaviour, IDragHandler, IPointerDownHandler, IPointerU
 
         transform.position = m_StartPos;
 
-        UserCommandData.movementH = 0;
+        playerControl.inputMovementH = 0;
 
-        UserCommandData.movementV = 0;
+        playerControl.inputMovementV = 0;
     }
 }

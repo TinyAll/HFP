@@ -15,6 +15,6 @@ public class DestroyAndCreateFishingnet : DestroyBase
 
         fn.GetComponent<WeaponBehavior>().init(GetComponent<WeaponBehavior>().attackObj);
 
-        GetComponent<DestroyWithOnTriggerExit>().execute(2000);
+        attackBehaviorBase.destroyWithOnTriggerExit();
     }
 }

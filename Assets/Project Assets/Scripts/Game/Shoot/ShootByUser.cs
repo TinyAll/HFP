@@ -15,20 +15,18 @@ public class ShootByUser : Shoot
 
     float cameraDistance;
 
-
-
     protected virtual void OnEnable()
     {
         Lean.LeanTouch.OnFingerDown += OnFingerDown;
         Lean.LeanTouch.OnFingerUp += OnFingerUp;
         Lean.LeanTouch.OnFingerDrag += OnFingerDrag;
-
     }
 
     protected virtual void OnDisable()
     {
         Lean.LeanTouch.OnFingerDown -= OnFingerDown;
         Lean.LeanTouch.OnFingerUp -= OnFingerUp;
+        Lean.LeanTouch.OnFingerDrag -= OnFingerDrag;
     }
 
     public override void Start()
@@ -50,13 +48,10 @@ public class ShootByUser : Shoot
 
             position = finger.GetWorldPosition(cameraDistance);
         }
-        print("up");
     }
     public void OnFingerUp(Lean.LeanFinger finger)
     {
         isShooting = false;
-        print("down");
-
     }
     public void OnFingerDrag(Lean.LeanFinger finger)
     {
@@ -64,7 +59,6 @@ public class ShootByUser : Shoot
         {
             position = finger.GetWorldPosition(cameraDistance);
         }
-        print("drag:" + position);
     }
     public void OnShooting()
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;//C# 包中的类
-public class ExecutionBase : MonoBehaviour {
+abstract public class ExecutionBase : MonoBehaviour {
 
     public enum RangeType
     {

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AttackBehaviorBase : MonoBehaviour {
+abstract public class AttackBehaviorBase : MonoBehaviour {
 
     public int HP;
 
@@ -9,15 +9,19 @@ public class AttackBehaviorBase : MonoBehaviour {
 
     public int coinValue;
 
-   
+    public int destroyDeep;
+
+    bool isDestroy = false;
 
     private Mission mission;
+
+    public PoolManager pools;
 
     public virtual void Awake()
     {
         gameObject.AddComponent<MovementData>();
 
-        gameObject.AddComponent<DestroyWithOnTriggerExit>();
+        //gameObject.AddComponent<DestroyWithOnTriggerExit>();
     }
     public virtual void Start()
     {
@@ -30,6 +34,25 @@ public class AttackBehaviorBase : MonoBehaviour {
     public virtual void nextFrame()
     {
         
+    }
+
+    public void destroyWithOnTriggerExit()
+    {
+        transform.position = Vector3.up * destroyDeep;
+
+        isDestroy = true;
+    }
+    public void destroyWithOnTriggerExit(float time)
+    {
+        Invoke("destroyWithOnTriggerExit", time);
+    }
+    void FixedUpdate()
+    {
+        if (isDestroy)
+        {
+            pools.ReturnObjectToPool(gameObject.name, gameObject);
+            //Destroy(gameObject);
+        }
     }
     public virtual void catchFish(AttackBehaviorBase catchAttackBehavior, WeaponBehavior weaponBehavior)
     {

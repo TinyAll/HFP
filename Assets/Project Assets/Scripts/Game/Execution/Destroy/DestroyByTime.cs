@@ -8,6 +8,6 @@ public class DestroyByTime : DestroyBase
     {
         base.OnEnter();
 
-        GetComponent<DestroyWithOnTriggerExit>().execute(9000, time);
+        attackBehaviorBase.destroyWithOnTriggerExit(time);
     }
 }

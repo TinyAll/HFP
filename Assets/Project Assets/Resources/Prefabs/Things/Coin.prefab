@@ -143,6 +143,7 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 7000
 --- !u!135 &13523936
 SphereCollider:
   m_ObjectHideFlags: 1

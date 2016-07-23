@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour {
 
+    public PoolManager pools;
+
     public enum WEAPONS { Bullet, Fishingnet, BulletWithFishingnet }; // available weapons for easy access
 
     public WEAPONS weapon;
@@ -20,6 +22,10 @@ public class Shoot : MonoBehaviour {
     public virtual void Start()
     {
         attackBehaviorBase = GetComponent<AttackBehaviorBase>();
+
+        pools.CreatePool("Weapon/", WEAPONS.Bullet.ToString(), 10);
+        pools.CreatePool("Weapon/", WEAPONS.Fishingnet.ToString(), 10);
+        pools.CreatePool("Weapon/", WEAPONS.BulletWithFishingnet.ToString(), 10);
     }
 
     public virtual void Update()
@@ -36,7 +42,7 @@ public class Shoot : MonoBehaviour {
 
         var type = weapon.ToString();
 
-        var weaponGameObj = Loader.LoadGameObject("Weapon/" + type);
+        var weaponGameObj = pools.GetObjectFromPool(type); // Loader.LoadGameObject("Weapon/" + type);
 
         weaponGameObj.name = type;
 

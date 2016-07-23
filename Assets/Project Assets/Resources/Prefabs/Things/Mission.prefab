@@ -106,6 +106,7 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 8000
 --- !u!114 &11440400
 MonoBehaviour:
   m_ObjectHideFlags: 1
