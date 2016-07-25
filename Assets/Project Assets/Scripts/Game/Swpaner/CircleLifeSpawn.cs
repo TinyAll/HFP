@@ -36,8 +36,6 @@ public class CircleLifeSpawn : SpawnerBase
 
     private Vector3[] paths = new Vector3[11];
 
-    private bool isLifeActive = false;
-
     void Start () {
 
         intervalTimer = spawnIntervalTimer;
@@ -80,8 +78,6 @@ public class CircleLifeSpawn : SpawnerBase
                     obj.transform.position = position;
 
                     amount--;
-
-                    isLifeActive = true;
                 }
             }
             //else

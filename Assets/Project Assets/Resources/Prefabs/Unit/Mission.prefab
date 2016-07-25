@@ -74,7 +74,7 @@ Transform:
   m_GameObject: {fileID: 195718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 407622}
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 149350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 407622}
@@ -108,6 +108,7 @@ MonoBehaviour:
   coinValue: 20
   destroyDeep: 8000
   pools: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!114 &11440400
 MonoBehaviour:
   m_ObjectHideFlags: 1

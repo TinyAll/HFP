@@ -32,8 +32,8 @@ public  class PoolManager:MonoBehaviour
         AttackEnemy,
     }
     public enum WEAPONS { Bullet, Fishingnet, BulletWithFishingnet };
-
-    GameObject poolHolder; // Main object that will hold all unique pool holders and their pool objects
+     
+    //GameObject poolHolder; // Main object that will hold all unique pool holders and their pool objects
 	public  Dictionary<string, PoolData> availablePools; // Dictionary of all available pools
 	//private  PoolVisualizer poolVisualizer; // Script reference so you can see all pools in Editor (look for the Pools object)
 	public  bool debug = false; // Shows debug logs.
@@ -42,7 +42,7 @@ public  class PoolManager:MonoBehaviour
     {
         availablePools = new Dictionary<string, PoolData>(); // make new dict.
 
-        poolHolder = gameObject;
+        //poolHolder = gameObject;
 
         foreach (var item in System.Enum.GetValues(typeof(StaticUnitType)))
         {
