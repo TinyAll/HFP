@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf89b3e8394d4944be0c5723bb960c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pools: {fileID: 0}
   weapon: 2
   startPoint: {fileID: 432412}
   bulletSpeed: 30
@@ -253,6 +254,7 @@ MonoBehaviour:
   ATK: 0
   coinValue: 0
   destroyDeep: 6000
+  pools: {fileID: 0}
   mode: 1
 --- !u!114 &11490566
 MonoBehaviour:

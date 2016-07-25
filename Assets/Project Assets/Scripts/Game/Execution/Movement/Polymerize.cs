@@ -5,17 +5,30 @@ public class Polymerize : RandomPosition
 {
     public float offsetRadiusDynamic = 0.5f;
 
-    private CircleLifeSpawn lifeSpawn;
 
     private Vector3 positionOffsetStatic;
 
+   // private CircleLifeSpawn spawner;
+    override public void OnEnable()
+    {
+        base.OnEnable();
 
+        //if (attackBehaviorBase)
+        //{
+        //    spawner = (attackBehaviorBase.spawner as CircleLifeSpawn);
+        //}
+        //lifeSpawn = transform.parent.GetComponent<CircleLifeSpawn>();
+    }
     public override void Start()
     {
 
         base.Start();
 
-        lifeSpawn = transform.parent.GetComponent<CircleLifeSpawn>();
+        //if (attackBehaviorBase)
+        //{
+        //    spawner = attackBehaviorBase.spawner as CircleLifeSpawn;
+        //}
+        //lifeSpawn = transform.parent.GetComponent<CircleLifeSpawn>();
 
         //InvokeRepeating("distrubutePosition", 0, changePositionTime);
     }
@@ -23,17 +36,21 @@ public class Polymerize : RandomPosition
     {
         base.OnEnter();
 
-        changePositionTime = lifeSpawn.getChangePositonTime();
+        var spawner = (attackBehaviorBase.spawner as CircleLifeSpawn);
+
+        changePositionTime = spawner.getChangePositonTime();
 
         InvokeRepeating("distrubutePosition", 0, changePositionTime);
 
-        var offsetRadiusStatic = lifeSpawn.offsetRadius;
+        var offsetRadiusStatic = spawner.offsetRadius;
 
         positionOffsetStatic = Random.insideUnitCircle * offsetRadiusStatic;
     }
     public override void distrubutePosition()
     {
-        Vector3 position = lifeSpawn.position;
+        var spawner = (attackBehaviorBase.spawner as CircleLifeSpawn);
+
+        Vector3 position = spawner.position;
 
         Vector3 positionOffsetDynamic = Random.insideUnitCircle * offsetRadiusDynamic;
 

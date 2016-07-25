@@ -207,10 +207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee17ab1c13f1dd148b376404719e82fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 5
+  HP: 4
   ATK: 0
   coinValue: 10
   destroyDeep: 4000
+  pools: {fileID: 0}
+  spawner: {fileID: 0}
 --- !u!114 &11493070
 MonoBehaviour:
   m_ObjectHideFlags: 1

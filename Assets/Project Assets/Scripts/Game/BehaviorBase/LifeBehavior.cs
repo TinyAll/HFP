@@ -18,7 +18,11 @@ public class LifeBehavior : AttackBehaviorBase
    
     void addRigdbody()
     {
-        rig = gameObject.AddComponent<Rigidbody>();
+        rig = GetComponent<Rigidbody>();
+        if (!rig)
+        {
+            rig = gameObject.AddComponent<Rigidbody>();
+        }
 
         rig.angularDrag = 0.0F;
 

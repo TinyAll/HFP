@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CircleLifeSpawn : MonoBehaviour {
-
-	public GameObject fish;
+public class CircleLifeSpawn : SpawnerBase
+{
+    public PoolManager.DynamicUnitType dynamicUnitType;
 
     public Transform distanceObject;
 
@@ -69,41 +69,52 @@ public class CircleLifeSpawn : MonoBehaviour {
 
                     position += transform.position;
 
-                    var obj = (GameObject)Instantiate(fish, position, Quaternion.identity);
+                    //var obj = (GameObject)Instantiate(fish, position, Quaternion.identity);
 
-                    obj.name = fish.name;
+                    var obj = pools.GetObjectFromPool(dynamicUnitType.ToString());
+
+                    obj.GetComponent<AttackBehaviorBase>().spawner = this;
 
                     obj.transform.SetParent(transform, true);
+
+                    obj.transform.position = position;
 
                     amount--;
 
                     isLifeActive = true;
                 }
             }
-            else
-            {
-                if (!isLifeActive)
-                {
-                    isLifeActive = !isLifeActive;
+            //else
+            //{
+            //    if (!isLifeActive)
+            //    {
+            //        isLifeActive = !isLifeActive;
 
-                    foreach (Transform item in transform)
-                    {
-                        item.gameObject.SetActive(isLifeActive);
-                    }
-                }
-            }
+            //        foreach (Transform item in transform)
+            //        {
+            //            item.gameObject.SetActive(isLifeActive);
+            //        }
+            //    }
+            //}
         }
         else if(sqrDistance > dispearDistance* dispearDistance)
         {
-            if (isLifeActive)
-            {
-                isLifeActive = !isLifeActive;
+            //if (isLifeActive)
+            //{
+            //    isLifeActive = !isLifeActive;
 
-                foreach(Transform item in transform)
-                {
-                    item.gameObject.SetActive(isLifeActive);
-                }
+            //    foreach(Transform item in transform)
+            //    {
+            //        item.gameObject.SetActive(isLifeActive);
+            //    }
+            //}
+
+            foreach(Transform item in transform)
+            {
+                item.GetComponent<AttackBehaviorBase>().destroyWithOnTriggerExit();
             }
+
+            amount = count;
         }
     }
 

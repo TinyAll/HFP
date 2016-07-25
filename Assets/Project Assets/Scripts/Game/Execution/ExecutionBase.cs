@@ -43,6 +43,21 @@ abstract public class ExecutionBase : MonoBehaviour {
 
     protected AttackBehaviorBase attackBehaviorBase;
 
+    public virtual void OnEnable()
+    {
+        if (attackBehaviorBase)
+        {
+            if(otherRange == RangeType.autoStart)
+            {
+                OnEnter();
+            }
+            else
+            {
+                OnExit();
+            }
+        }
+    }
+
     public virtual void Start()
     {
         attackBehaviorBase = gameObject.GetComponent<AttackBehaviorBase>();
@@ -58,9 +73,16 @@ abstract public class ExecutionBase : MonoBehaviour {
             radius = attackTriggerObject.GetComponent<SphereCollider>().radius;
         }
 
-        if(otherRange == RangeType.autoStart)
+        if (attackBehaviorBase)
         {
-            OnEnter();
+            if (otherRange == RangeType.autoStart)
+            {
+                OnEnter();
+            }
+            else
+            {
+                OnExit();
+            }
         }
 
         otherLayer = LayerMask.NameToLayer(otherRange.ToString());

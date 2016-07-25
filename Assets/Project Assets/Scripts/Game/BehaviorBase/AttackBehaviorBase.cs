@@ -17,9 +17,15 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
 
     public PoolManager pools;
 
+    [HideInInspector]
+    public SpawnerBase spawner;
+
     public virtual void Awake()
     {
-        gameObject.AddComponent<MovementData>();
+        if (!GetComponent<MovementData>())
+        {
+            gameObject.AddComponent<MovementData>();
+        }
 
         //gameObject.AddComponent<DestroyWithOnTriggerExit>();
     }
@@ -44,6 +50,8 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
     }
     public void destroyWithOnTriggerExit(float time)
     {
+        isDestroy = false;
+        CancelInvoke("destroyWithOnTriggerExit");
         Invoke("destroyWithOnTriggerExit", time);
     }
     void FixedUpdate()
@@ -51,6 +59,8 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
         if (isDestroy)
         {
             pools.ReturnObjectToPool(gameObject.name, gameObject);
+
+            isDestroy = false;
             //Destroy(gameObject);
         }
     }

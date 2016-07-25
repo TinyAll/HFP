@@ -107,6 +107,7 @@ MonoBehaviour:
   ATK: 0
   coinValue: 20
   destroyDeep: 8000
+  pools: {fileID: 0}
 --- !u!114 &11440400
 MonoBehaviour:
   m_ObjectHideFlags: 1

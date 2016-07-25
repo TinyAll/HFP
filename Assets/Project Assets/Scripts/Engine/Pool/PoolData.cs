@@ -26,7 +26,7 @@ public class PoolData:MonoBehaviour
 	// allows the creation of a new object when the pool is empty
 	// PIETER: I prefer 'forceReturning' an object, so that is true per default.
 	// However, there might be certain cases where you NEED a new object when the pool is empty. Maybe with homing missiles that live until they hit something,.. I dunno
-	public bool allowNew = false;
+	public bool allowNew = true;
 
 	// takes the 'oldest' in use object and return it to the pool, then use it.
 	// NOTE: Keep in mind that when your pool has not got many objects you can experience sudden dissapearances of your objects.
@@ -62,7 +62,9 @@ public class PoolData:MonoBehaviour
 		lastClone = GameObject.Instantiate(aSourceObject);
 		lastClone.name = source.name;
 		lastClone.transform.ResetToParent(gameObject);
-		freeObjects.Add(lastClone);
+        lastClone.SetActive(false);
+
+        freeObjects.Add(lastClone);
 	}
 
 	/// <summary>
@@ -89,8 +91,9 @@ public class PoolData:MonoBehaviour
 			tObject.transform.parent = null; // THIS IS MOST IMPORTANT, IF we don't do this SetActive below has no effect!
 			tObject.SetActive(true); // activate
 			inUseObjects.Add(tObject); // add to inuse list
-		} 
-		return tObject; // return it
+		}
+
+        return tObject; // return it
 	}
 
 	/// <summary>
@@ -98,8 +101,8 @@ public class PoolData:MonoBehaviour
 	/// </summary>
 	/// <param name="anObject">An object.</param>
 	public void ReturnObject(GameObject anObject){
-		// remove from list
-		inUseObjects.Remove(anObject);
+        // remove from list
+        inUseObjects.Remove(anObject);
 		// clear component from 
 		//Component[] components = anObject.GetComponents(typeof(Component));
 		//foreach(Component component in components){

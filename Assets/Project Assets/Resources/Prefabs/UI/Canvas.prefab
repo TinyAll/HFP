@@ -1810,15 +1810,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 447322}
-  - 114: {fileID: 11494466}
-  - 114: {fileID: 11447660}
-  - 114: {fileID: 11426500}
-  - 114: {fileID: 11454902}
-  - 135: {fileID: 13596244}
-  - 114: {fileID: 11418494}
-  - 114: {fileID: 11454514}
-  - 114: {fileID: 11439122}
-  - 114: {fileID: 11492122}
   m_Layer: 14
   m_Name: Crab
   m_TagString: Untagged
@@ -2194,7 +2185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.9, y: 43.7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -3241,6 +3232,8 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 0
+  pools: {fileID: 0}
 --- !u!114 &11406624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3413,6 +3406,8 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 0
+  pools: {fileID: 0}
 --- !u!114 &11410576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3756,21 +3751,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherRange: 3
   attackTriggerObject: {fileID: 169772}
---- !u!114 &11418494
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54a1fd20dfdfad345be345a1957cf9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherRange: 2
-  attackTriggerObject: {fileID: 199788}
-  enableMovement: 0
-  speed: 0.4
 --- !u!114 &11418522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3809,6 +3789,8 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 0
+  pools: {fileID: 0}
 --- !u!114 &11419972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4167,23 +4149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb8314a62ebd4f40a313a55792cb213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11426500
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c6124c2abbaa44e84fa27a4c6ea4e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherRange: 1
-  attackTriggerObject: {fileID: 199788}
-  enableMovement: 0
-  speed: 3
-  wallLayer: 11
-  limitLayer: 12
 --- !u!114 &11426510
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4255,6 +4220,8 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 0
+  pools: {fileID: 0}
 --- !u!114 &11427576
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4333,6 +4300,8 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 0
+  pools: {fileID: 0}
 --- !u!114 &11430254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4674,19 +4643,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb8314a62ebd4f40a313a55792cb213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11439122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ea10ac09d88f74693d954c6bad18e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherRange: 3
-  attackTriggerObject: {fileID: 199788}
 --- !u!114 &11439286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5002,17 +4958,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11447660
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d9be4b9df8bbc747abbd94f0af389a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11447966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5140,6 +5085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acf89b3e8394d4944be0c5723bb960c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pools: {fileID: 0}
   weapon: 2
   startPoint: {fileID: 475728}
   bulletSpeed: 30
@@ -5210,21 +5156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb8314a62ebd4f40a313a55792cb213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11454514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54a1fd20dfdfad345be345a1957cf9bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherRange: 4
-  attackTriggerObject: {fileID: 199788}
-  enableMovement: 0
-  speed: 0.4
 --- !u!114 &11454560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5258,17 +5189,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: PlayerMode1
---- !u!114 &11454902
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb8314a62ebd4f40a313a55792cb213, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11455850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5465,6 +5385,8 @@ MonoBehaviour:
   HP: 0
   ATK: 0
   coinValue: 20
+  destroyDeep: 0
+  pools: {fileID: 0}
 --- !u!114 &11459654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5506,6 +5428,8 @@ MonoBehaviour:
   enableMovement: 0
   speed: 14
   fastSpeed: 0
+  inputMovementH: 0
+  inputMovementV: 0
 --- !u!114 &11461530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5656,6 +5580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277f5c8cb78520943afbd4438883a7c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControl: {fileID: 0}
 --- !u!114 &11466620
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6796,19 +6721,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &11492122
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ea10ac09d88f74693d954c6bad18e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherRange: 7
-  attackTriggerObject: {fileID: 199788}
 --- !u!114 &11492886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6934,20 +6846,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &11494466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef30926299fb1b4418a2c5d3302f8b2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 5
-  ATK: 0
-  coinValue: 5
 --- !u!114 &11494692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7308,18 +7206,6 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136786}
-  m_Material: {fileID: 13400000, guid: 41160870de884274da3eed4b619af8a3, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &13596244
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 199788}
   m_Material: {fileID: 13400000, guid: 41160870de884274da3eed4b619af8a3, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1

@@ -17,6 +17,22 @@ using System.Collections.Generic;
 /// </summary>
 public  class PoolManager:MonoBehaviour
 {
+    public enum StaticUnitType
+    {
+        Coin,
+        Mission,
+        Crab,
+
+    }
+    public enum DynamicUnitType
+    {
+        EnemyTiny,
+        EnemyMid,
+        EnemyHug,
+        AttackEnemy,
+    }
+    public enum WEAPONS { Bullet, Fishingnet, BulletWithFishingnet };
+
     GameObject poolHolder; // Main object that will hold all unique pool holders and their pool objects
 	public  Dictionary<string, PoolData> availablePools; // Dictionary of all available pools
 	//private  PoolVisualizer poolVisualizer; // Script reference so you can see all pools in Editor (look for the Pools object)
@@ -27,6 +43,19 @@ public  class PoolManager:MonoBehaviour
         availablePools = new Dictionary<string, PoolData>(); // make new dict.
 
         poolHolder = gameObject;
+
+        foreach (var item in System.Enum.GetValues(typeof(StaticUnitType)))
+        {
+            CreatePool("Unit/", item.ToString(), 10);
+        }
+        foreach (var item in System.Enum.GetValues(typeof(DynamicUnitType)))
+        {
+            CreatePool("Unit/", item.ToString(), 10);
+        }
+        foreach (var item in System.Enum.GetValues(typeof(WEAPONS)))
+        {
+            CreatePool("Unit/", item.ToString(), 1);
+        }
     }
 	public  void Start()
 	{
@@ -66,8 +95,12 @@ public  class PoolManager:MonoBehaviour
 	/// <returns>The object from pool.</returns>
 	/// <param name="aPoolName">A pool name.</param>
 	public  GameObject GetObjectFromPool(string aPoolName){
-		if(!availablePools.ContainsKey(aPoolName)){if(debug) Debug.Log("[PoolManager] GetObjectFromPool. This is a last resort fallback! There is no pool with this name: " + aPoolName); return null;} 
-		return availablePools[aPoolName].GetObject();
+		if(!availablePools.ContainsKey(aPoolName)){if(debug) Debug.Log("[PoolManager] GetObjectFromPool. This is a last resort fallback! There is no pool with this name: " + aPoolName); return null;}
+
+        var obj = availablePools[aPoolName].GetObject();
+
+        obj.GetComponent<AttackBehaviorBase>().pools = this;
+        return obj;
 	}
 
 	/// <summary>

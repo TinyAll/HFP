@@ -144,6 +144,7 @@ MonoBehaviour:
   ATK: 0
   coinValue: 20
   destroyDeep: 7000
+  pools: {fileID: 0}
 --- !u!135 &13523936
 SphereCollider:
   m_ObjectHideFlags: 1

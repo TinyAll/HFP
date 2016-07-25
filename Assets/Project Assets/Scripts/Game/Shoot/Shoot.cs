@@ -3,11 +3,11 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour {
 
-    public PoolManager pools;
+    public BulletSpawner bulletSpawner;
 
-    public enum WEAPONS { Bullet, Fishingnet, BulletWithFishingnet }; // available weapons for easy access
+    // available weapons for easy access
 
-    public WEAPONS weapon;
+    public PoolManager.WEAPONS weapon;
 
     public Transform startPoint;
 
@@ -23,9 +23,7 @@ public class Shoot : MonoBehaviour {
     {
         attackBehaviorBase = GetComponent<AttackBehaviorBase>();
 
-        pools.CreatePool("Weapon/", WEAPONS.Bullet.ToString(), 10);
-        pools.CreatePool("Weapon/", WEAPONS.Fishingnet.ToString(), 10);
-        pools.CreatePool("Weapon/", WEAPONS.BulletWithFishingnet.ToString(), 10);
+      
     }
 
     public virtual void Update()
@@ -42,13 +40,13 @@ public class Shoot : MonoBehaviour {
 
         var type = weapon.ToString();
 
-        var weaponGameObj = pools.GetObjectFromPool(type); // Loader.LoadGameObject("Weapon/" + type);
-
-        weaponGameObj.name = type;
+        var weaponGameObj = bulletSpawner.createBullet(type); // Loader.LoadGameObject("Weapon/" + type);
 
         weaponGameObj.transform.position = pos;
 
         var weaponBehavior = weaponGameObj.GetComponent<WeaponBehavior>();
+
+       // weaponBehavior.pools = pools;
 
         attackBehaviorBase.useWeapon(weaponBehavior);
 
@@ -56,6 +54,6 @@ public class Shoot : MonoBehaviour {
     }
     public void setWeapon(string name)
     {
-        weapon = (WEAPONS) System.Enum.Parse(typeof(WEAPONS), name);
+        weapon = (PoolManager.WEAPONS) System.Enum.Parse(typeof(PoolManager.WEAPONS), name);
     }
 }
