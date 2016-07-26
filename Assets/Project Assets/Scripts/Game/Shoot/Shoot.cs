@@ -46,8 +46,6 @@ public class Shoot : MonoBehaviour {
 
         var weaponBehavior = weaponGameObj.GetComponent<WeaponBehavior>();
 
-       // weaponBehavior.pools = pools;
-
         attackBehaviorBase.useWeapon(weaponBehavior);
 
         weaponBehavior.init(attackBehaviorBase,shootPoint, currentVelocity);

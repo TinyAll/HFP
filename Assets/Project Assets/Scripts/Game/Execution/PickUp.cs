@@ -7,11 +7,8 @@ public class PickUp : ExecutionBase
     {
         base.OnEnter();
 
-        var otherAttackBehaviorBase = currentOnEnterCollider.transform.parent.GetComponent<AttackBehaviorBase>();
+        //var otherAttackBehaviorBase = currentOnEnterCollider.transform.parent.GetComponent<AttackBehaviorBase>();
 
-        attackBehaviorBase.catchSomething(otherAttackBehaviorBase);
-
-        otherAttackBehaviorBase.coinValue = 0;
-
+        //attackBehaviorBase.catchSomething(otherAttackBehaviorBase);
     }
 }

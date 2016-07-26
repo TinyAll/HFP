@@ -43,17 +43,29 @@ abstract public class ExecutionBase : MonoBehaviour {
 
     protected AttackBehaviorBase attackBehaviorBase;
 
+    [HideInInspector]
+    public delegate void OnEnterDelegate();
+
+    [HideInInspector]
+    public OnEnterDelegate onEnter, onExit;
+
+    void Awake()
+    {
+        onEnter += OnEnter;
+
+        onExit += OnExit;
+    }
     public virtual void OnEnable()
     {
         if (attackBehaviorBase)
         {
             if(otherRange == RangeType.autoStart)
             {
-                OnEnter();
+                onEnter();
             }
             else
             {
-                OnExit();
+                onExit();
             }
         }
     }
@@ -77,11 +89,11 @@ abstract public class ExecutionBase : MonoBehaviour {
         {
             if (otherRange == RangeType.autoStart)
             {
-                OnEnter();
+                onEnter();
             }
             else
             {
-                OnExit();
+                onExit();
             }
         }
 
@@ -95,7 +107,7 @@ abstract public class ExecutionBase : MonoBehaviour {
 
             currentOnEnterCollider = other;
 
-            OnEnter();
+            onEnter();
         }
     }
 

@@ -57,7 +57,6 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
         injuredAttackBehavior = this;
 
         HPStore = HP;
-        //gameObject.AddComponent<DestroyWithOnTriggerExit>();
     }
 
     public virtual void OnEnable()
@@ -97,7 +96,6 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
     }
     public virtual void nextFrame()
     {
-        
     }
 
     public void destroyWithOnTriggerExit()
@@ -119,28 +117,34 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
             pools.ReturnObjectToPool(gameObject.name, gameObject);
 
             isDestroy = false;
-            //Destroy(gameObject);
         }
     }
     public virtual void catchFish(AttackBehaviorBase catchAttackBehavior, AttackBehaviorBase weaponBehavior)
     {
         if (mission)
         {
-            mission.ProcessUseWeaponCatchFish( weaponBehavior.name);
+            mission.ProcessUseWeaponCatchFish(weaponBehavior.name);
         }
         catchSomething(catchAttackBehavior);
     }
     public virtual void catchSomething(AttackBehaviorBase catchAttackBehavior)
     {
-        coinValue += catchAttackBehavior.coinValue;
-
-        if (mission)
+        if(injuredAttackBehavior == this)
         {
-            mission.ProcessCatchSomething(catchAttackBehavior.gameObject.name);
+            coinValue += catchAttackBehavior.coinValue;
 
-            mission.ProcessEarnCoin(catchAttackBehavior.coinValue);
+            if (mission)
+            {
+                mission.ProcessCatchSomething(catchAttackBehavior.gameObject.name);
+
+                mission.ProcessEarnCoin(catchAttackBehavior.coinValue);
+            }
         }
-
+        else
+        {
+            injuredAttackBehavior.catchSomething(catchAttackBehavior);
+        }
+        
     }
     public virtual void useWeapon(WeaponBehavior weaponBehavior)
     {
@@ -152,6 +156,5 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
 
             mission.ProcessConsumeCoinValue(weaponBehavior.coinValue);
         }
-            
     }
 }

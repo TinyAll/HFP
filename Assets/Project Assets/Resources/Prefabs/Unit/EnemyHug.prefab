@@ -17,7 +17,7 @@ GameObject:
   - 114: {fileID: 11493070}
   - 114: {fileID: 11412402}
   - 114: {fileID: 11474542}
-  - 114: {fileID: 11443510}
+  - 114: {fileID: 11460350}
   m_Layer: 14
   m_Name: EnemyHug
   m_TagString: Untagged
@@ -160,7 +160,7 @@ MonoBehaviour:
   attackTriggerObject: {fileID: 165374}
   enableMovement: 0
   speed: 0.4
---- !u!114 &11443510
+--- !u!114 &11460350
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -171,11 +171,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee17ab1c13f1dd148b376404719e82fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
+  catchType: 2
   HP: 5
+  Probability: 0.1
   ATK: 0
   coinValue: 10
   destroyDeep: 3000
   pools: {fileID: 0}
+  spawner: {fileID: 0}
+  injuredAttackBehavior: {fileID: 0}
 --- !u!114 &11463512
 MonoBehaviour:
   m_ObjectHideFlags: 1

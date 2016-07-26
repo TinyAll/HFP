@@ -22,6 +22,8 @@ public class RandomPosition : MovementBase
     public override void OnEnter()
     {
         base.OnEnter();
+
+        velocity = Vector3.zero;
     }
     public override void OnExit()
     {
