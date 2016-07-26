@@ -3,7 +3,31 @@ using System.Collections;
 
 abstract public class AttackBehaviorBase : MonoBehaviour {
 
+    public enum MODE
+    {
+        None,
+        PlayerMode1,
+        PlayerMode2,
+        PlayerMode3,
+        CrabMode
+    }
+
+    public MODE mode;
+
+    public enum CatchType
+    {
+        God,
+        ByHp,
+        ByProbability
+    }
+
+    public CatchType catchType;
+
     public int HP;
+
+    private int HPStore;
+
+    public float Probability;
 
     public int ATK;
 
@@ -15,10 +39,14 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
 
     private Mission mission;
 
+    [HideInInspector]
     public PoolManager pools;
 
     [HideInInspector]
     public SpawnerBase spawner;
+
+    [HideInInspector]
+    public AttackBehaviorBase injuredAttackBehavior;
 
     public virtual void Awake()
     {
@@ -26,17 +54,47 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
         {
             gameObject.AddComponent<MovementData>();
         }
+        injuredAttackBehavior = this;
 
+        HPStore = HP;
         //gameObject.AddComponent<DestroyWithOnTriggerExit>();
+    }
+
+    public virtual void OnEnable()
+    {
+        HP = HPStore;
     }
     public virtual void Start()
     {
         mission = GetComponent<Mission>();
 
-       
+        if (mode != MODE.None)
+        {
+            var type = mode.ToString();
+
+            setMode(type);
+        }
+
         Invoke("nextFrame", 0);
     }
-    
+    public void setMode(string type)
+    {
+        var mode = gameObject.transform.FindChild("Mode");
+
+        if (mode)
+        {
+            Destroy(mode.gameObject);
+        }
+        var modeGameObj = Loader.LoadGameObject("Mode/" + type);
+
+        modeGameObj.name = "Mode";
+
+        modeGameObj.transform.parent = gameObject.transform;
+
+        modeGameObj.transform.position = gameObject.transform.position;
+
+        modeGameObj.transform.rotation = gameObject.transform.rotation;
+    }
     public virtual void nextFrame()
     {
         
@@ -64,7 +122,7 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
             //Destroy(gameObject);
         }
     }
-    public virtual void catchFish(AttackBehaviorBase catchAttackBehavior, WeaponBehavior weaponBehavior)
+    public virtual void catchFish(AttackBehaviorBase catchAttackBehavior, AttackBehaviorBase weaponBehavior)
     {
         if (mission)
         {

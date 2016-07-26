@@ -3,8 +3,7 @@ using System.Collections;
 
 public class WeaponBehavior : AttackBehaviorBase
 {
-    [HideInInspector]
-    public AttackBehaviorBase attackObj;
+    
 
     virtual public void init(AttackBehaviorBase attackObj, Vector3 endPosition , Vector3 currentVelocity)
     {
@@ -13,6 +12,6 @@ public class WeaponBehavior : AttackBehaviorBase
 
     virtual public void init(AttackBehaviorBase attackObj)
     {
-        this.attackObj = attackObj;
+        injuredAttackBehavior = attackObj;
     }
 }

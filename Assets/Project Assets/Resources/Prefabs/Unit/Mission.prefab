@@ -8,9 +8,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407622}
-  - 114: {fileID: 11476454}
   - 114: {fileID: 11419362}
-  - 114: {fileID: 11475986}
+  - 114: {fileID: 11480654}
   m_Layer: 0
   m_Name: Mission
   m_TagString: Untagged
@@ -103,12 +102,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950d19b38492d954dbac46f99f0d786e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
+  catchType: 2
   HP: 0
+  Probability: 1
   ATK: 0
   coinValue: 20
   destroyDeep: 8000
   pools: {fileID: 0}
   spawner: {fileID: 0}
+  injuredAttackBehavior: {fileID: 0}
 --- !u!114 &11440400
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb8314a62ebd4f40a313a55792cb213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11475986
+--- !u!114 &11480654
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -128,20 +131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 143376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27f3c349c1139541b89abb5a77aeeef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherRange: 8
-  attackTriggerObject: {fileID: 195718}
---- !u!114 &11476454
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 143376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32172d754658bd34183533d8199fa519, type: 3}
+  m_Script: {fileID: 11500000, guid: 17ea10ac09d88f74693d954c6bad18e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   otherRange: 8

@@ -7,19 +7,41 @@ public class Injured : ExecutionBase
     {
         base.OnEnter();
 
-        var otherAttackBehaviorBase = currentOnEnterCollider.transform.parent.GetComponent<AttackBehaviorBase>();
+               //var weaponBehaviorBase = otherAttackBehaviorBase as WeaponBehavior;
 
-        var weaponBehaviorBase = otherAttackBehaviorBase as WeaponBehavior;
-
-        attackBehaviorBase.HP -= otherAttackBehaviorBase.ATK;
-
-        if (GetComponent<AttackBehaviorBase>().HP <= 0)
+        switch (attackBehaviorBase.catchType)
         {
-            weaponBehaviorBase.attackObj.GetComponent<AttackBehaviorBase>().catchFish(attackBehaviorBase, weaponBehaviorBase);
+            case AttackBehaviorBase.CatchType.ByHp:
+                {
+                    var otherAttackBehaviorBase = currentOnEnterCollider.transform.GetComponent<AttackBehaviorBase>();
 
-            attackBehaviorBase.coinValue = 0;
+                    otherAttackBehaviorBase = otherAttackBehaviorBase ? otherAttackBehaviorBase : currentOnEnterCollider.transform.parent.GetComponent<AttackBehaviorBase>();
 
-            attackBehaviorBase.destroyWithOnTriggerExit();
+                    attackBehaviorBase.HP -= otherAttackBehaviorBase.ATK;
+
+                    if (GetComponent<AttackBehaviorBase>().HP <= 0)
+                    {
+                        //otherAttackBehaviorBase.injuredAttackBehavior.GetComponent<AttackBehaviorBase>().catchFish(attackBehaviorBase, otherAttackBehaviorBase);
+
+                        //attackBehaviorBase.coinValue = 0;
+
+                        attackBehaviorBase.destroyWithOnTriggerExit();
+                    }
+
+                    break;
+                }
+            case AttackBehaviorBase.CatchType.ByProbability:
+                {
+                    var random = Random.Range(0.0f, 1.0f);
+
+                    if (attackBehaviorBase.Probability > random)
+                    {
+                        attackBehaviorBase.destroyWithOnTriggerExit();
+                    }
+
+                    break;
+                }
         }
+        
     }
 }

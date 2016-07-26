@@ -159,7 +159,7 @@ MonoBehaviour:
   otherRange: 4
   attackTriggerObject: {fileID: 165374}
   enableMovement: 0
-  speed: 0.4
+  speed: 1
 --- !u!114 &11441652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,12 +171,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee17ab1c13f1dd148b376404719e82fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: 0
+  catchType: 2
   HP: 3
+  Probability: 0.4
   ATK: 0
   coinValue: 10
   destroyDeep: 5000
   pools: {fileID: 0}
   spawner: {fileID: 0}
+  injuredAttackBehavior: {fileID: 0}
 --- !u!114 &11463512
 MonoBehaviour:
   m_ObjectHideFlags: 1
