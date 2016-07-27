@@ -18,6 +18,8 @@ GameObject:
   - 114: {fileID: 11412402}
   - 114: {fileID: 11474542}
   - 114: {fileID: 11460350}
+  - 114: {fileID: 11432656}
+  - 114: {fileID: 11443042}
   m_Layer: 14
   m_Name: EnemyHug
   m_TagString: Untagged
@@ -145,6 +147,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherRange: 7
   attackTriggerObject: {fileID: 165374}
+--- !u!114 &11432656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11493070}
 --- !u!114 &11437820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +174,18 @@ MonoBehaviour:
   attackTriggerObject: {fileID: 165374}
   enableMovement: 0
   speed: 0.4
+--- !u!114 &11443042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11412402}
 --- !u!114 &11460350
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Injured : ExecutionBase
 {
+    public delegate void ExecuteAfterDestroyDelegate(AttackBehaviorBase otherAttackBehavior);
+
+    [HideInInspector]
+    public ExecuteAfterDestroyDelegate ead;
 
     public override void OnEnter()
     {
@@ -28,6 +32,11 @@ public class Injured : ExecutionBase
                         //attackBehaviorBase.coinValue = 0;
                         //otherAttackBehaviorBase.catchSomething(attackBehaviorBase);
                         attackBehaviorBase.destroyWithOnTriggerExit();
+
+                        if (ead != null)
+                        {
+                            ead(otherAttackBehaviorBase);
+                        }
                     }
 
                     break;
@@ -40,6 +49,12 @@ public class Injured : ExecutionBase
                     {
                         //otherAttackBehaviorBase.catchSomething(attackBehaviorBase);
                         attackBehaviorBase.destroyWithOnTriggerExit();
+
+                        if (ead != null)
+                        {
+                            ead(otherAttackBehaviorBase);
+                        }
+
                     }
 
                     break;

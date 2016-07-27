@@ -18,6 +18,8 @@ GameObject:
   - 114: {fileID: 11474542}
   - 114: {fileID: 11499560}
   - 114: {fileID: 11438078}
+  - 114: {fileID: 11426054}
+  - 114: {fileID: 11460254}
   m_Layer: 14
   m_Name: EnemyMid
   m_TagString: Untagged
@@ -130,6 +132,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherRange: 7
   attackTriggerObject: {fileID: 165374}
+--- !u!114 &11426054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11493070}
 --- !u!114 &11437820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,6 +180,18 @@ MonoBehaviour:
   pools: {fileID: 0}
   spawner: {fileID: 0}
   injuredAttackBehavior: {fileID: 0}
+--- !u!114 &11460254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11412402}
 --- !u!114 &11463512
 MonoBehaviour:
   m_ObjectHideFlags: 1

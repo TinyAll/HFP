@@ -43,6 +43,7 @@ GameObject:
   - 4: {fileID: 434678}
   - 114: {fileID: 11479736}
   - 114: {fileID: 11484404}
+  - 114: {fileID: 11410764}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -91,6 +92,18 @@ Transform:
   - {fileID: 425118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11410764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11484404}
 --- !u!114 &11460658
 MonoBehaviour:
   m_ObjectHideFlags: 1

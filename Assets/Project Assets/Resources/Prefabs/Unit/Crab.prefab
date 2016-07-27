@@ -17,6 +17,8 @@ GameObject:
   - 114: {fileID: 11481982}
   - 114: {fileID: 11469966}
   - 114: {fileID: 11471640}
+  - 114: {fileID: 11469236}
+  - 114: {fileID: 11440226}
   m_Layer: 14
   m_Name: Crab
   m_TagString: Untagged
@@ -48,6 +50,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d9be4b9df8bbc747abbd94f0af389a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11440226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11469966}
+--- !u!114 &11469236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11481982}
 --- !u!114 &11469966
 MonoBehaviour:
   m_ObjectHideFlags: 1

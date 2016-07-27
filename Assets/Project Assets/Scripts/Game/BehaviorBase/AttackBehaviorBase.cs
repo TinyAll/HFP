@@ -11,15 +11,14 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
         PlayerMode3,
         CrabMode
     }
-
-    public MODE mode;
-
     public enum CatchType
     {
         God,
         ByHp,
         ByProbability
     }
+
+    public MODE mode;
 
     public CatchType catchType;
 
@@ -129,6 +128,7 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
     }
     public virtual void catchSomething(AttackBehaviorBase catchAttackBehavior)
     {
+        //玩家捕获到物体
         if(injuredAttackBehavior == this)
         {
             coinValue += catchAttackBehavior.coinValue;
@@ -140,7 +140,7 @@ abstract public class AttackBehaviorBase : MonoBehaviour {
                 mission.ProcessEarnCoin(catchAttackBehavior.coinValue);
             }
         }
-        else
+        else//子弹捕获到物体
         {
             injuredAttackBehavior.catchSomething(catchAttackBehavior);
         }

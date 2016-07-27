@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 407622}
   - 114: {fileID: 11419362}
   - 114: {fileID: 11480654}
+  - 114: {fileID: 11448522}
   m_Layer: 0
   m_Name: Mission
   m_TagString: Untagged
@@ -123,6 +124,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb8314a62ebd4f40a313a55792cb213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11448522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 143376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11480654}
 --- !u!114 &11480654
 MonoBehaviour:
   m_ObjectHideFlags: 1

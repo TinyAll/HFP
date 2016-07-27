@@ -19,7 +19,9 @@ GameObject:
   - 114: {fileID: 11437706}
   - 114: {fileID: 11470500}
   - 114: {fileID: 11447240}
-  - 114: {fileID: 11499670}
+  - 114: {fileID: 11424686}
+  - 114: {fileID: 11431550}
+  - 114: {fileID: 11429342}
   m_Layer: 14
   m_Name: AttackEnemy
   m_TagString: Untagged
@@ -148,6 +150,51 @@ MonoBehaviour:
   attackTriggerObject: {fileID: 165374}
   enableMovement: 0
   speed: 0.5
+--- !u!114 &11424686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11437706}
+--- !u!114 &11429342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee17ab1c13f1dd148b376404719e82fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  catchType: 2
+  HP: 5
+  Probability: 0.5
+  ATK: 0
+  coinValue: 2
+  destroyDeep: 1000
+  pools: {fileID: 0}
+  spawner: {fileID: 0}
+  injuredAttackBehavior: {fileID: 0}
+--- !u!114 &11431550
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 165374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7da6a05cd4fd845b1dc0f6894110ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  injured: {fileID: 11470500}
 --- !u!114 &11437706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,22 +302,6 @@ MonoBehaviour:
   attackTriggerObject: {fileID: 165374}
   enableMovement: 0
   speed: 40
---- !u!114 &11499670
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 165374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee17ab1c13f1dd148b376404719e82fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HP: 5
-  ATK: 0
-  coinValue: 2
-  destroyDeep: 1000
-  pools: {fileID: 0}
 --- !u!135 &13540472
 SphereCollider:
   m_ObjectHideFlags: 1
