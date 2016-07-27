@@ -615,6 +615,12 @@ Transform:
   - {fileID: 136408645}
   - {fileID: 2099964494}
   - {fileID: 1965063479}
+  - {fileID: 1283798438}
+  - {fileID: 1175035234}
+  - {fileID: 2070196540}
+  - {fileID: 271170819}
+  - {fileID: 326315700}
+  - {fileID: 1259264966}
   m_Father: {fileID: 409692066}
   m_RootOrder: 2
 --- !u!1 &166918024
@@ -992,6 +998,61 @@ Transform:
   - {fileID: 408374023}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &271170818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138556, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 271170819}
+  - 114: {fileID: 271170820}
+  m_Layer: 0
+  m_Name: CircleStayTiny (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &271170819
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 457770, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 271170818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.3, y: -351.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 144433294}
+  m_RootOrder: 12
+--- !u!114 &271170820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11416568, guid: 6aaead5ccbbcb7344b69131edd257ef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 271170818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ea75aae05badb49a10274c9031c08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools: {fileID: 919112527}
+  dynamicUnitType: 0
+  distanceObject: {fileID: 1148231788}
+  spawnDistance: 50
+  dispearDistance: 100
+  spawnIntervalTimer: 0.01
+  count: 30
+  changePositionTime: 2
+  changePositionTimeOffset: 0.2
+  stayCircleRadius: 15
+  spawnCircleRadius: 5
+  position: {x: 0, y: 0, z: 0}
+  offsetRadius: 2
+  drawRange: 1
 --- !u!1 &309324119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1132,61 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 309324119}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &326315699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138556, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 326315700}
+  - 114: {fileID: 326315701}
+  m_Layer: 0
+  m_Name: CircleStayTiny (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &326315700
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 457770, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326315699}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.7, y: -354.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 144433294}
+  m_RootOrder: 13
+--- !u!114 &326315701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11416568, guid: 6aaead5ccbbcb7344b69131edd257ef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 326315699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ea75aae05badb49a10274c9031c08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools: {fileID: 919112527}
+  dynamicUnitType: 0
+  distanceObject: {fileID: 1148231788}
+  spawnDistance: 50
+  dispearDistance: 100
+  spawnIntervalTimer: 0.01
+  count: 30
+  changePositionTime: 2
+  changePositionTimeOffset: 0.2
+  stayCircleRadius: 15
+  spawnCircleRadius: 5
+  position: {x: 0, y: 0, z: 0}
+  offsetRadius: 2
+  drawRange: 1
 --- !u!1 &345260374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,7 +1561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &409692066
 Transform:
   m_ObjectHideFlags: 0
@@ -4510,6 +4626,61 @@ MonoBehaviour:
   shootObject: {fileID: 0}
   attackBehaviorObject: {fileID: 0}
   mission: {fileID: 0}
+--- !u!1 &1175035233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138556, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1175035234}
+  - 114: {fileID: 1175035235}
+  m_Layer: 0
+  m_Name: CircleStayTiny (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1175035234
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 457770, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175035233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 38.8, y: -177.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 144433294}
+  m_RootOrder: 10
+--- !u!114 &1175035235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11416568, guid: 6aaead5ccbbcb7344b69131edd257ef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175035233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ea75aae05badb49a10274c9031c08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools: {fileID: 919112527}
+  dynamicUnitType: 0
+  distanceObject: {fileID: 1148231788}
+  spawnDistance: 50
+  dispearDistance: 100
+  spawnIntervalTimer: 0.01
+  count: 30
+  changePositionTime: 2
+  changePositionTimeOffset: 0.2
+  stayCircleRadius: 15
+  spawnCircleRadius: 5
+  position: {x: 0, y: 0, z: 0}
+  offsetRadius: 2
+  drawRange: 1
 --- !u!4 &1185297893
 Transform:
   m_ObjectHideFlags: 0
@@ -4843,6 +5014,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 471404542}
   m_RootOrder: 7
+--- !u!1 &1259264965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138556, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1259264966}
+  - 114: {fileID: 1259264967}
+  m_Layer: 0
+  m_Name: CircleStayTiny (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259264966
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 457770, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1259264965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 36.6, y: -275.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 144433294}
+  m_RootOrder: 14
+--- !u!114 &1259264967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11416568, guid: 6aaead5ccbbcb7344b69131edd257ef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1259264965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ea75aae05badb49a10274c9031c08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools: {fileID: 919112527}
+  dynamicUnitType: 0
+  distanceObject: {fileID: 1148231788}
+  spawnDistance: 50
+  dispearDistance: 100
+  spawnIntervalTimer: 0.01
+  count: 30
+  changePositionTime: 2
+  changePositionTimeOffset: 0.2
+  stayCircleRadius: 15
+  spawnCircleRadius: 5
+  position: {x: 0, y: 0, z: 0}
+  offsetRadius: 2
+  drawRange: 1
 --- !u!1001 &1264003522
 Prefab:
   m_ObjectHideFlags: 0
@@ -4889,6 +5115,61 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50ab5bc42e2be3a4ea7ccb8fe188a356, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1283798437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138556, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1283798438}
+  - 114: {fileID: 1283798439}
+  m_Layer: 0
+  m_Name: CircleStayTiny (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1283798438
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 457770, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283798437}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.3, y: -114.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 144433294}
+  m_RootOrder: 9
+--- !u!114 &1283798439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11416568, guid: 6aaead5ccbbcb7344b69131edd257ef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1283798437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ea75aae05badb49a10274c9031c08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools: {fileID: 919112527}
+  dynamicUnitType: 0
+  distanceObject: {fileID: 1148231788}
+  spawnDistance: 50
+  dispearDistance: 100
+  spawnIntervalTimer: 0.01
+  count: 30
+  changePositionTime: 2
+  changePositionTimeOffset: 0.2
+  stayCircleRadius: 15
+  spawnCircleRadius: 5
+  position: {x: 0, y: 0, z: 0}
+  offsetRadius: 2
+  drawRange: 1
 --- !u!1 &1311057062
 GameObject:
   m_ObjectHideFlags: 0
@@ -7372,6 +7653,61 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2024718343}
+--- !u!1 &2070196539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 138556, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2070196540}
+  - 114: {fileID: 2070196541}
+  m_Layer: 0
+  m_Name: CircleStayTiny (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2070196540
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 457770, guid: 6aaead5ccbbcb7344b69131edd257ef6, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2070196539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.7, y: -217.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 144433294}
+  m_RootOrder: 11
+--- !u!114 &2070196541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11416568, guid: 6aaead5ccbbcb7344b69131edd257ef6,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2070196539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33ea75aae05badb49a10274c9031c08d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pools: {fileID: 919112527}
+  dynamicUnitType: 0
+  distanceObject: {fileID: 1148231788}
+  spawnDistance: 50
+  dispearDistance: 100
+  spawnIntervalTimer: 0.01
+  count: 30
+  changePositionTime: 2
+  changePositionTimeOffset: 0.2
+  stayCircleRadius: 15
+  spawnCircleRadius: 5
+  position: {x: 0, y: 0, z: 0}
+  offsetRadius: 2
+  drawRange: 1
 --- !u!1 &2088391370
 GameObject:
   m_ObjectHideFlags: 0
